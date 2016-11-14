@@ -1,0 +1,19 @@
+service: movie-service
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: test
+  region: eu-central-1
+
+plugins:
+  - serverless-offline
+
+functions:
+  movies:
+    handler: index.movies
+    events:
+      - http:
+          path: movies
+          method: get
+          cors: true
