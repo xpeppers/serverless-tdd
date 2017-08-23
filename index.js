@@ -1,5 +1,3 @@
-'use strict';
-
 const MovieService = require('./lib/movie-service');
 
 module.exports.movies = (event, context, callback) => {
