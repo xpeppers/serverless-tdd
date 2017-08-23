@@ -1,6 +1,6 @@
 {
   "name": "serverless-tdd",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Serverless TDD example",
   "author": "XPeppers",
   "license": "MIT",
@@ -10,22 +10,21 @@
     "url": "https://github.com/xpeppers/serverless-tdd"
   },
   "dependencies": {
-    "serverless-offline": "3.2.1"
+    "serverless-offline": "3.15.3"
   },
   "devDependencies": {
-    "chai": "3.5.0",
-    "chai-as-promised": "6.0.0",
-    "mocha": "3.1.2",
-    "sinon": "1.17.6",
-    "sinon-chai": "2.8.0",
-    "supertest": "2.0.0",
-    "supertest-as-promised": "3.2.0"
+    "chai": "4.1.1",
+    "chai-as-promised": "7.1.1",
+    "mocha": "3.5.0",
+    "supertest": "3.0.0"
   },
   "scripts": {
-    "start": "serverless offline start -s development -o 0.0.0.0 > serverless.log 2>&1 &",
+    "start": "sls offline start -s development -o 0.0.0.0 > serverless.log 2>&1 &",
     "stop": "pkill node || true",
     "test": "mocha test test/unit/** test/integration/**",
+    "test:local-acceptance": "sls offline start --exec 'mocha test test/acceptance/**'",
     "test:acceptance": "mocha test test/acceptance/**",
-    "deploy": "env $(cat .env | xargs) serverless deploy"
+    "deploy": "env $(cat .env | xargs) sls deploy",
+    "info": "env $(cat .env | xargs) sls info"
   }
 }

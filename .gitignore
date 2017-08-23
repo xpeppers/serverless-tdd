@@ -2,4 +2,5 @@
 .DS_Store
 .serverless
 node_modules
+node-dependencies-*
 *.log
