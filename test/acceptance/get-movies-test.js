@@ -1,8 +1,8 @@
-const expect = require('chai').expect;
+const { expect } = require('chai');
 const supertest = require('supertest');
 const movies = require('../../movies.json');
 
-const endpoint = process.env.ENDPOINT ? process.env.ENDPOINT : 'http://localhost:3000';
+const endpoint = process.env.ENDPOINT || 'http://localhost:3000';
 const client = supertest(endpoint);
 
 describe('get movies', function () {
