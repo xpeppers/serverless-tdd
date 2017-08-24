@@ -1,5 +1,5 @@
 const chaiAsPromised = require('chai-as-promised');
-const expect = require('chai').use(chaiAsPromised).expect;
+const { expect } = require('chai').use(chaiAsPromised);
 const sinon = require('sinon');
 const MovieService = require('../../lib/movie-service');
 
