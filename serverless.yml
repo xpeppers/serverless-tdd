@@ -13,7 +13,4 @@ functions:
   movies:
     handler: index.movies
     events:
-      - http:
-          path: movies
-          method: get
-          cors: true
+      - http: get movies
