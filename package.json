@@ -23,8 +23,8 @@
     "start": "sls offline start -s development -o 0.0.0.0 > serverless.log 2>&1 &",
     "stop": "pkill node || true",
     "test": "mocha test test/unit/** test/integration/**",
-    "test:local-acceptance": "sls offline start --exec 'mocha test test/acceptance/**'",
-    "test:acceptance": "mocha test test/acceptance/**",
+    "local-acceptance-test": "sls offline start --exec 'mocha test test/acceptance/**'",
+    "acceptance-test": "mocha test test/acceptance/**",
     "deploy": "env $(cat .env | xargs) sls deploy",
     "info": "env $(cat .env | xargs) sls info"
   }
